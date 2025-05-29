@@ -17,7 +17,7 @@ class ActivitySimulator:
         x = random.randint(100, 1000)
         y = random.randint(100, 800)
         subprocess.run(["xdotool", "mousemove", "--sync", "--smooth", "10", str(x), str(y)])
-        print(f"[Mouse] Moved smoothly to: ({x}, {y})")
+        # print(f"[Mouse] Moved smoothly to: ({x}, {y})")
 
     def scroll_mouse(self):
         """Randomly scroll up or down."""
@@ -27,7 +27,7 @@ class ActivitySimulator:
         for _ in range(clicks):
             subprocess.run(["xdotool", "click", str(button)])
             time.sleep(0.1)
-        print(f"[Scroll] Scrolled {direction} {clicks} times")
+        # print(f"[Scroll] Scrolled {direction} {clicks} times")
 
     def press_key(self):
         """Simulates a real key press and release."""
@@ -43,7 +43,7 @@ class ActivitySimulator:
         time.sleep(0.1)
         self.ui.write(e.EV_KEY, key, 0)
         self.ui.syn()
-        print(f"[Key] Pressed key code: {key}")
+        # print(f"[Key] Pressed key code: {key}")
 
     def type_text(self):
         """Simulate typing full words."""
@@ -61,7 +61,7 @@ class ActivitySimulator:
 
         text = random.choice(words)
         subprocess.run(['xdotool', 'type', text])
-        print(f"[Typing] Typed: '{text}'")
+        # print(f"[Typing] Typed: '{text}'")
 
     def switch_window(self):
         """Simulate holding Alt and pressing Tab multiple times."""
@@ -72,7 +72,7 @@ class ActivitySimulator:
             subprocess.run(["xdotool", "key", "Tab"])
             time.sleep(0.2)
         subprocess.run(["xdotool", "keyup", "Alt"])
-        print(f"[Window] Switched window using Alt+Tab {tabs} times")
+        # print(f"[Window] Switched window using Alt+Tab {tabs} times")
 
     def run(self):
         """Main loop to simulate activity."""
@@ -84,19 +84,19 @@ class ActivitySimulator:
             self.type_text,
             self.switch_window
         ]
-        print("[Simulator] Started activity simulation.")
+        # print("[Simulator] Started activity simulation.")
 
         while self.running:
             action = random.choice(actions)
             action()
             sleep_time = random.uniform(4, 12)
-            print(f"[Simulator] Sleeping for {sleep_time:.2f} seconds...\n")
+            # print(f"[Simulator] Sleeping for {sleep_time:.2f} seconds...\n")
             time.sleep(sleep_time)
 
     def stop(self):
         """Stops the activity simulation."""
         self.running = False
-        print("[Simulator] Stopping activity simulation...")
+        # print("[Simulator] Stopping activity simulation...")
 
 
 simulator = ActivitySimulator()
