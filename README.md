@@ -3,11 +3,13 @@
 🚀 **Activity Simulator** is a Python-based tool that simulates **keyboard and mouse movements** to prevent idle tracking systems from detecting inactivity. It ensures that your system remains "active" even when you are away.
 
 ## 🔹 Features
-✔️ Random **mouse movements**  
-✔️ Simulated **keyboard inputs** (A-Z, numbers, space, tab)  
-✔️ **Application switching** to make activity look realistic  
+✔️ Random **mouse movements** (smooth)  
+✔️ Simulated **keyboard inputs** (A-Z, numbers, space, tab + typed words)  
+✔️ **Random window switching (Alt+Tab)** to make activity look realistic  
+✔️ **Occasional scrolling**
+✔️ Smart action rotation with random intervals  
 ✔️ Lightweight & runs **silently in the background**  
-✔️ Simple **start/stop** commands  
+✔️ Simple **start/stop** commands
 
 ---
 
